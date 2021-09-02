@@ -1,0 +1,261 @@
+@use "generals/fonts" as *;
+@use "generals/variables" as *;
+
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Barlow;
+    font-weight: 500;
+    font-size: $font-medium;
+    line-height: 1.6rem;
+    color: $color-gray;
+
+    background-color: $color-white;
+}
+a{
+    text-decoration: none;
+    color: $color-gray;
+}
+
+h1{
+    font-family: Barlow;
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 3.4rem;
+    color: $color-black;
+}
+h2{
+    font-family: Barlow;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 2.4rem;
+    color: $color-black;
+}
+h3{
+    font-family: Barlow;
+    font-size: 1.6rem;
+    font-weight: 900;
+    line-height: 2rem;
+    color: $color-black;
+}
+
+/*---Header---*/
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: $padding-mobile;
+
+    &_cta{
+        padding: 16px;
+
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        background-color: $color-gray-light;
+        border-radius: 8px;
+        color: $color-black;
+
+        transition: color .2s, background-color .2s;
+
+        &:hover{
+            color: $color-white;
+            background-color: $color-black;
+        }
+    }
+}
+
+.hero{
+    padding: $padding-mobile;
+
+    &_container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-bottom: $padding-mobile;
+    }
+
+    &_headline{
+        margin-bottom: $padding-mobile;
+
+        text-transform: uppercase;
+    }
+
+    &_subline{
+        margin-bottom: $padding-mobile;
+    }
+
+    &_cta{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        &_btn{
+            margin-right: $padding-mobile;
+            padding: 16px;
+
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: $color-orange;
+            border-radius: 8px;
+            color: $color-white;
+
+            transition: background-color .2s;
+
+            &:hover{
+                background-color: $color-orange-light;
+            }
+        }
+
+        &_date{
+            padding: 16px 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+
+    &_img{
+        margin-top: $padding-mobile;
+        width: calc(100% + #{$padding-mobile});
+        aspect-ratio: 1.125;
+        background-image: url(./images/mobile/image-keyboard.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 20px 0 0 20px;
+    }
+}
+
+
+/*---Main---*/
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &_img-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    &_img-small{
+        position: relative;
+        flex-grow: 1;
+        height: 50vw;
+        background-image: url(./images/mobile/image-phone-and-keyboard.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 0 20px 20px 0;
+        filter: contrast(90%);
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $color-orange;
+            mix-blend-mode: multiply;
+            border-radius: 0 20px 20px 0;
+        }
+    }
+
+    &_img-medium{
+        flex-grow: 2;
+        margin-left: $padding-mobile;
+        margin-right: $padding-mobile;
+        height: 50vw;
+        background-image: url(./images/mobile/image-glass-and-keyboard.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 20px;
+    }
+
+    &_container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: $padding-mobile;
+        padding: $padding-mobile;
+        text-align: center;
+    }
+
+    &_title{
+        margin-bottom: $padding-mobile;
+        text-transform: uppercase;
+    }
+}
+
+.features{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $padding-mobile;
+
+    &_card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: $padding-mobile 0;
+
+        &_img{
+            width: 4rem;
+            height: 4rem;
+            position: relative;
+            margin-bottom: $padding-mobile;
+            background-color: $color-orange;
+            border-radius: 16px;
+
+            &::after{
+                content: "";
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                right: 1rem;
+                bottom: 1rem;
+                
+                background-image: var(--img-url);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+
+        &_title{
+            margin-bottom: $padding-mobile;
+            text-transform: uppercase;
+        }
+    }
+}
+
+/*---Footer---*/
+footer, .footer{
+    padding: $padding-mobile;
+    text-align: center;
+
+    span{
+        font-weight: 700;
+    }
+}
+
+
+@import "responsive";

@@ -1,0 +1,125 @@
+@media (min-width: 768px) {
+    .hero{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-right: 0;
+        overflow-x: hidden;
+
+        &_container{
+            max-width: 438px;
+            margin-top: $padding-mobile;
+            padding-top: $padding-mobile;
+            padding-right: $padding-mobile;
+            margin-right: $padding-mobile;
+        }
+
+        &_img{
+            max-width: 31.5rem;
+            height: 28rem;
+            margin-top: 0;
+            background-image: url(./images/tablet/image-keyboard.jpg);
+        }
+    }
+
+    .description{
+        margin-bottom: $padding-mobile;
+
+        &_img-container{
+            padding: 0 $padding-mobile;
+        }
+
+        &_img-small{
+            height: 24rem;
+            border-radius: 20px;
+            background-image: url(./images/tablet/image-phone-and-keyboard.jpg);
+
+            &::after{
+                border-radius: 20px;
+            }
+        }
+
+        &_img-medium{
+            height: 24rem;
+            background-image: url(./images/tablet/image-glass-and-keyboard.jpg);
+        }
+
+        &_container{
+            flex-direction: row;
+            text-align: left;
+        }
+
+        &_title{
+            margin-right: $padding-mobile;
+            margin-bottom: 0;
+        }
+    }
+
+    .features{
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        &_card{
+            width: 50%;
+            align-items: flex-start;
+            text-align: left;
+        }
+    }
+}
+
+@media (min-width: 1008px) {
+    body{
+        max-width: 1008px;
+        margin: auto;
+    }
+
+    .hero{
+        &_img{
+            border-radius: 20px;
+        }
+    }
+
+    .description{
+        flex-direction: row;
+
+        &_img-container{
+            width: 66%;
+        }
+
+        &_img-small{
+            height: 24rem;
+            border-radius: 20px;
+
+            &::after{
+                border-radius: 20px;
+            }
+        }
+
+        &_img-medium{
+            height: 24rem;
+        }
+
+        &_container{
+            width: 33%;
+            flex-direction: column;
+            margin-top: 0;
+        }
+
+        &_title{
+            margin-right: 0;
+            margin-bottom: $padding-mobile;
+        }
+    }
+
+    .features{
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+
+        &_card:not(:first-child){
+            margin-left: $padding-mobile;
+        }
+    }
+}
